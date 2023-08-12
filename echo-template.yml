@@ -6,4 +6,4 @@ jobs:
 - job: EchoVariable
   steps:
   - script: echo ${{ parameters.stageName }}
-    displayName: "Echo Stage Name
+    displayName: "Echo Stage Name"
