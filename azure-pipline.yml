@@ -1,0 +1,30 @@
+trigger:
+- '*'
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- stage: Build
+  variables: 
+   - group: Group1
+  jobs:
+  - template: echo-template.yml
+    parameters:
+      stageName: $(var)
+
+- stage: Test
+  variables:
+  - group: Group2
+  jobs:
+  - template: echo-template.yml
+    parameters:
+      stageName: $(var)
+
+- stage: Deploy
+  variables:
+    - group: Group3
+  jobs:
+  - template: echo-template.yml
+    parameters:
+      stageName: $(var)
