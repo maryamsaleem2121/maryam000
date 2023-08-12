@@ -1,0 +1,9 @@
+parameters:
+  - name: stageName
+    type: string
+
+jobs:
+- job: EchoVariable
+  steps:
+  - script: echo ${{ parameters.stageName }}
+    displayName: "Echo Stage Name
